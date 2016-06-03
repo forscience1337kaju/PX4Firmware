@@ -524,6 +524,8 @@ PX4FLOW::collect()
 
 	report.quality = f_integral.qual; //0:bad ; 255 max quality
 
+	report.time_needed = f_integral.time_needed; //reads the added member directly from the i2c_integral_frame in the PX4Flow Buffer
+
 	report.gyro_x_rate_integral = static_cast<float>(f_integral.gyro_x_rate_integral) / 10000.0f; //convert to radians
 
 	report.gyro_y_rate_integral = static_cast<float>(f_integral.gyro_y_rate_integral) / 10000.0f; //convert to radians

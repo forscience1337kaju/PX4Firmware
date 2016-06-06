@@ -524,8 +524,6 @@ PX4FLOW::collect()
 
 	report.quality = f_integral.qual; //0:bad ; 255 max quality
 
-	report.time_needed = f_integral.time_needed; //reads the added member directly from the i2c_integral_frame in the PX4Flow Buffer
-
 	report.gyro_x_rate_integral = static_cast<float>(f_integral.gyro_x_rate_integral) / 10000.0f; //convert to radians
 
 	report.gyro_y_rate_integral = static_cast<float>(f_integral.gyro_y_rate_integral) / 10000.0f; //convert to radians
@@ -539,6 +537,11 @@ PX4FLOW::collect()
 	report.gyro_temperature = f_integral.gyro_temperature;//Temperature * 100 in centi-degrees Celsius
 
 	report.sensor_id = 0;
+
+    //newly added for pattern recognition functionality
+    report.rec_qual = f_integral.rec_qual;
+    report.pat_x_dist = f_integral.pat_x_dist;
+    report.pat_y_dist = f_integral.pat_y_dist;
 
 	/* rotate measurements according to parameter */
 	float zeroval = 0.0f;

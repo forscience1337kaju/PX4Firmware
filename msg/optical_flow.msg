@@ -14,5 +14,7 @@ uint32 time_since_last_sonar_update	# time since last sonar update in microsecon
 uint16 frame_count_since_last_readout	# number of accumulated frames in timespan
 int16 gyro_temperature	# Temperature * 100 in centi-degrees Celsius
 uint8 quality	# Average of quality of accumulated frames, 0: bad quality, 255: maximum quality
-uint32 time_needed	#time which is needed for calculating OF in microseconds
+uint8 rec_qual 		# contains the quality of recognition 
+float32 pat_x_dist 	# contains the distance to the pattern in x direction
+float32 pat_y_dist	# contains the distance to the pattern in y direction
 

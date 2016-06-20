@@ -538,6 +538,11 @@ PX4FLOW::collect()
 
 	report.sensor_id = 0;
 
+    //newly added for pattern recognition functionality
+    report.rec_qual = f_integral.rec_qual;
+    report.pat_x_dist = f_integral.pat_x_dist;
+    report.pat_y_dist = f_integral.pat_y_dist;
+
 	/* rotate measurements according to parameter */
 	float zeroval = 0.0f;
 

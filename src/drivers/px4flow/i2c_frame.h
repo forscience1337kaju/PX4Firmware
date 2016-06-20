@@ -74,6 +74,10 @@ typedef struct i2c_integral_frame {
 	uint16_t ground_distance;
 	int16_t gyro_temperature;
 	uint8_t qual;
+    //added for the pattern recognition functionality
+    uint8_t rec_qual;
+    float pat_x_dist;
+    float pat_y_dist;
 } i2c_integral_frame;
 
 #define I2C_INTEGRAL_FRAME_SIZE (sizeof(i2c_integral_frame))
